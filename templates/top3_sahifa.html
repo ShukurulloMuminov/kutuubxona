@@ -1,0 +1,13 @@
+<h1>Top Sahifa eng ko'p 3 kitob</h1>
+
+<hr>
+
+<a href="/">Bosh sahifa</a>
+
+<ol>
+    {% for top3_sahifa in top3_sahifalar %}
+         <li>
+           <p>  {{ top3_sahifa }} </p>
+         </li>
+    {% endfor %}
+</ol>

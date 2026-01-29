@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxonachi </title>
+</head>
+<body>
+<h>| Kutubxonachilar |  </h>
+<hr>
+<br>
+{%for k in kutubxona %}
+  <p>
+      <a href='/kutubxona/{{ k.id }}'>{{ k.ism }} </a>
+              <button>
+                  <a href='/kutubxona/{{ k.id }}/delete/confirm'>o'chirish</a>
+              </button>
+  </p>
+{%endfor%}
+<br>
+<hr>
+<br>
+<h1>Yangi malumot qo'shish {{kutubxona.ism}}</h1>
+<form method="post">
+{%csrf_token%}
+<label for="ism">Ism:</label>
+<input type="text" name="ism" id="ism" required>
+<br><br>
+<label for="vaqt">Ish Vaqti:</label>
+<input type="time" name="vaqt" id="vaqt" required>
+<br>
+<br>
+<button>Qo'shish</button>
+</form>
+</body>
+</html>

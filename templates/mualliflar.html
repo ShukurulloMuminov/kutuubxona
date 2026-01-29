@@ -1,0 +1,67 @@
+<h1>Mualliflar</h1>
+<hr>
+
+<a href="/">Bosh sahifa</a>
+
+{% for muallif in mualliflar %}
+<p>
+    {{forloop.counter}}.
+    <a href='/mualliflar/{{ muallif.id }}'>{{ muallif.ism }} </a>
+    <button>
+        <a href='/mualliflar/{{ muallif.id }}/delete/confirm'>o'chirish</a>
+    </button>
+    <button>
+         <a href="{{muallif.id}}/update">
+        Tahrirlash
+
+    </a>
+    </button>
+</p>
+{% endfor %}
+<hr>
+<h>
+    Yangi muallif qo'shish
+</h>
+<br>
+<br>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button>Qo'shish</button>
+<!--    <label for="ism">Ism:</label>-->
+<!--    <input type="text" name="ism" id="ism" required>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <label>Jinsi:</label><br>-->
+
+<!--<label>-->
+<!--  <input type="radio" name="jins" value="Erkak">-->
+<!--  Erkak-->
+<!--</label>-->
+
+<!--<label>-->
+<!--  <input type="radio" name="jins" value="Erkak">-->
+<!--  Ayol-->
+<!--</label>-->
+
+<!--    <br>-->
+<!--    <br>-->
+<!--    <label for="t_sana">Tug'ilgan sana:</label>-->
+<!--    <input type="date" name="t_sana" id="t_sana" required>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <label for="kitob_soni">Kitoblar soni:</label>-->
+<!--    <input type="number" name="kitob_soni" id="kitob_soni" required>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <label for="tirik">Tirikmi?</label>-->
+<!--    <label>-->
+<!--        <input type="checkbox" name="tirik" id="tirik">-->
+<!--        Tirik-->
+<!--    </label>-->
+<!--    <br>-->
+<!--    <br>-->
+
+
+</form>

@@ -1,0 +1,24 @@
+<h1>Rekordlar</h1>
+<hr>
+
+<a href="/">Bosh sahifa</a>
+
+    {% for rekord in rekordlar %}
+         <p>
+              <a href='/record/{{ rekord.id }}'>{{rekord.talaba}} </a>
+             <button>
+                 <a href="/record/{{rekord.id}}/delete/confirm">O'chirish</a>
+             </button>
+         </p>
+    {% endfor %}
+
+<hr>
+<br><br>
+<h1>Yangi rekordlar qo'shish</h1>
+<form method="post">
+    {%csrf_token%}
+
+    {{form.as_p}}
+
+    <button>Qo'shish</button>
+</form>

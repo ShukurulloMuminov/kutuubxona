@@ -1,0 +1,12 @@
+<h1>10 ta va undan ko'p kitob yozgan mualliflar</h1>
+<hr>
+
+{% for item in mualliflar_data %}
+    <h2>{{ item.muallif.ism }} ({{ item.muallif.kitob_soni }} kitob)</h2>
+    <ul>
+        {% for kitob in item.kitoblar %}
+            <li>{{ kitob.nomi }} - {{ kitob.sahifa }} sahifa</li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endfor %}

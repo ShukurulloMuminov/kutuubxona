@@ -1,0 +1,27 @@
+<h1>Kitoblar</h1>
+<hr>
+
+<a href="/">Bosh sahifa</a>
+
+    {% for kitob in kitoblar %}
+         <p>
+              <a href='/kitoblar/{{ kitob.id }}'>{{ kitob.nom }} </a>
+              <button>
+        <a href='/kitoblar/{{ kitob.id }}/delete/confirm'>o'chirish</a>
+              </button>
+             <button>
+                 <a href="{{kitob.id}}/update">Tahrirlash</a>
+             </button>
+         </p>
+    {% endfor %}
+
+
+<hr>
+<h>Yangi kitob qo'shish</h>
+<br>
+
+<form method="post">
+    {%csrf_token%}
+    {{forms.as_p}}
+    <button>Qo'shish</button>
+</form>

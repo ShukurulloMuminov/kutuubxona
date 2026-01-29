@@ -1,0 +1,10 @@
+<h2>Top 3 muallif</h2>
+
+<ol>
+    {% for muallif in top3_mualliflar %}
+        <li>
+            {{ muallif.ism }} —
+            {{ muallif.kitoblar_count }} ta kitob
+        </li>
+    {% endfor %}
+</ol>
